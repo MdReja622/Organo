@@ -1,0 +1,143 @@
+@use '../utils' as *;
+
+/*--
+    - Background color
+-----------------------------------------*/
+.rs_gray-bg {
+    background-color: var(--rs-bg-color);
+}
+
+.rs_black-bg {
+    background-color: var(--rs-title-color);
+}
+
+.rs_blue-linear {
+    background: linear-gradient(270deg, #064635 56.29%, rgba(6, 70, 53, 0.00) 100%);
+}
+
+/*--
+    - data bg color css
+------------------------------------------*/
+
+[data-bg-color="theme-2"] {
+    background-color: var(--tp-theme-2);
+}
+
+
+/*--
+    - data overlay color css
+------------------------------------------*/
+
+[data-overlay="white"] {
+    background-color: var(--tp-common-white);
+}
+
+[data-overlay="black"] {
+    background-color: var(--tp-common-black);
+}
+
+[data-overlay="theme"] {
+    background-color: var(--tp-theme-1);
+}
+
+/*--
+    - data overlay css
+------------------------------------------*/
+[data-overlay] {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+/*-- Overlay Color --*/
+[data-overlay="light"] {
+    &::before {
+        background-color: var(--tp-common-white);
+    }
+}
+
+[data-overlay="dark"] {
+    &::before {
+        background-color: var(--tp-common-black);
+    }
+}
+
+[data-overlay="green"] {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        background-color: var(--tp-theme-2);
+        z-index: -1;
+    }
+}
+
+[data-overlay="footer-bg"] {
+    &::before {
+        background-color: var(--tp-common-black);
+    }
+}
+
+/*-- Overlay Opacity --*/
+[data-overlay-opacity="1"] {
+    &::before {
+        opacity: 0.1;
+    }
+}
+
+[data-overlay-opacity="2"] {
+    &::before {
+        opacity: 0.2;
+    }
+}
+
+[data-overlay-opacity="3"] {
+    &::before {
+        opacity: 0.3;
+    }
+}
+
+[data-overlay-opacity="4"] {
+    &::before {
+        opacity: 0.4;
+    }
+}
+
+[data-overlay-opacity="5"] {
+    &::before {
+        opacity: 0.5;
+    }
+}
+
+[data-overlay-opacity="6"] {
+    &::before {
+        opacity: 0.6;
+    }
+}
+
+[data-overlay-opacity="7"] {
+    &::before {
+        opacity: 0.7;
+    }
+}
+
+[data-overlay-opacity="8"] {
+    &::before {
+        opacity: 0.8;
+    }
+}
+
+[data-overlay-opacity="9"] {
+    &::before {
+        opacity: 0.9;
+    }
+}

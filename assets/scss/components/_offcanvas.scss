@@ -1,0 +1,193 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  OFFCANVAS CSS START
+/*----------------------------------------*/
+
+.rs_body-overlay {
+    background-color: var(--rs-black);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &.opened {
+        opacity: 0.7;
+        visibility: visible;
+    }
+}
+
+
+.rs_offcanvas {
+    &-area {
+        position: fixed;
+        z-index: 999;
+        background: var(--rs-white);
+        width: 400px;
+        right: 0;
+        top: 0;
+        padding: 50px 40px;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: 0.3s;
+        overflow-y: scroll;
+        overscroll-behavior-y: contain;
+        scrollbar-width: none;
+    }
+
+    &-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+
+    }
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-close-btn {
+        display: inline-block;
+        font-size: 18px;
+        height: 40px;
+        width: 40px;
+        line-height: 37px;
+        border: 2px solid var(--rs-theme-1);
+        background-color: transparent;
+        color: var(--rs-title-color);
+        border-radius: 50%;
+
+        &:hover {
+            background: var(--rs-theme-1);
+            color: var(--rs-white);
+
+
+        }
+    }
+}
+
+
+
+
+.rs_offcanvas-social-title {
+    font-size: 20px;
+    color: #000;
+}
+
+.rs_offcanvas-social a {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 5px;
+    background: var(--rs-common-white);
+    color: var(--rs-theme-1);
+    border-radius: 50%;
+
+    &:hover {
+        background: var(--rs-theme-1);
+        color: var(--rs-white);
+    }
+}
+
+.rs_offcanvas-btn a {
+    border-radius: inherit;
+}
+
+
+
+
+
+
+
+
+/*----------------------------------------*/
+/*  mobile mwnu CSS START
+/*----------------------------------------*/
+
+
+.rs_mobile-menu-wrapper ul {
+    list-style: none;
+
+    & li {
+        position: relative;
+
+        &>a {
+            padding: 8px 0;
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        &:not(:last-child) {
+            &>a {
+                border-bottom: 1px solid rgba(1, 15, 28, 0.1);
+            }
+        }
+
+        &:hover>a {
+            color: var(--rs-theme-1);
+
+        }
+
+        &.active {
+            &>a {
+                color: var(--rs-theme-1);
+            }
+
+            &>.rs_menu-close {
+                border-color: var(--rs-theme-1);
+                color: var(--rs-white);
+                background-color: var(--rs-theme-1);
+
+                & i {
+                    @include transform(rotate(90deg));
+                }
+            }
+        }
+
+        & .sub-menu {
+            display: none;
+            padding-left: 20px;
+        }
+    }
+
+    .has-sub-menu::after {
+        display: none;
+    }
+}
+
+.rs_menu-close {
+    position: absolute;
+    right: 0;
+    top: 6.5px;
+    border: 1px solid rgba(1, 15, 28, 0.12);
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 29px;
+
+    &:hover {
+        background-color: var(--rs-theme-1);
+        color: var(--rs-white);
+        border-color: var(--rs-theme-1);
+    }
+
+    & i {
+        @include transition(.3s);
+    }
+
+}

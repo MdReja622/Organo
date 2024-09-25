@@ -1,0 +1,34 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  SECTION TITLE CSS START
+/*----------------------------------------*/
+
+
+.rs_section {
+    &-sub-title {
+        font-family: var(--rs-ff-roboto);
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        background: var(--rs-smoke-2);
+        color: var(--rs-theme-1);
+        display: inline-flex;
+        align-items: center;
+        border-radius: 30px;
+        padding: 5px 10px;
+
+        img {
+            margin-right: 8px;
+        }
+    }
+
+    &-title {
+        color: var(--rs-title-color);
+        font-family: var(--rs-ff-Signika);
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: capitalize;
+    }
+}

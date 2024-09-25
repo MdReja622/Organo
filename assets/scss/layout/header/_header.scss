@@ -1,0 +1,269 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  03. HEADER CSS START
+/*----------------------------------------*/
+.rs_header {
+    max-width: 1740px;
+    background: var(--rs-white-01);
+    backdrop-filter: blur(7.5px);
+    border: 1px solid var(--rs-white-05);
+    position: absolute;
+    right: 60px;
+    left: 60px;
+    top: 30px;
+    margin: 0 auto;
+    z-index: 999;
+    border-radius: 100px;
+    padding: 21.5px 30px;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+
+
+
+
+
+// main menu css 
+
+.rs_header {
+    &-menu {
+        margin-left: 80px;
+
+        @media #{$xxxxl, $xxxl} {
+            margin-left: 40px;
+        }
+
+        @media #{$xxl} {
+            margin-left: 25px;
+        }
+
+
+
+        ul {
+            list-style: none;
+
+            li {
+                display: inline-block;
+                position: relative;
+                margin-right: 30px;
+                padding: 5px 10px;
+                border-radius: 30px;
+
+                @media #{$xxxxl} {
+                    margin-right: 20px;
+                }
+
+                @media #{$xxxl, $xxl} {
+                    margin-right: 10px;
+                }
+
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    font-family: var(--rs-ff-roboto);
+                    color: var(--rs-white);
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+
+                &.has-sub-menu::after {
+                    content: "\f078";
+                    font-family: fontawesome;
+                    margin-left: 5px;
+                    color: var(--rs-white);
+                }
+
+                &:hover {
+                    color: var(--rs-theme-2);
+                    background: var(--rs-white-01);
+                }
+
+                &:hover>a {
+                    color: var(--rs-theme-2);
+                }
+
+                &:hover::after {
+                    color: var(--rs-theme-2);
+                }
+
+                // submenu 
+                ul {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 250px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    visibility: hidden;
+                    opacity: 0;
+                    transform: scaleY(0);
+                    transform-origin: top;
+                    transition: 0.5s;
+                    background: var(--rs-white-05);
+                    z-index: 99;
+
+                    li {
+                        padding: 5px 15px;
+                        margin: 0;
+                        display: block;
+                        border-radius: 0;
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            right: 20px;
+                            top: 4px;
+                        }
+
+                        a {
+                            color: var(--rs-white);
+                        }
+
+                        &:hover>a {
+                            color: var(--rs-theme-2);
+                        }
+
+                        &:hover {
+                            background: var(--rs-body);
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        }
+
+                        ul {
+                            left: 100%;
+                            top: 0;
+                        }
+                    }
+                }
+
+                &:hover>ul {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scaleY(1);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// header search css 
+.rs_header {
+
+    &-search {
+        @media #{$xxl} {
+            width: 190px;
+        }
+
+        @media #{$lg} {
+            width: 190px;
+        }
+
+        @media #{$md} {
+            width: 220px;
+        }
+    }
+
+    &-search-group {
+        position: relative;
+
+        & .search-btn {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background: var(--rs-white);
+            border-radius: 30px;
+            color: var(--rs-theme-1);
+        }
+
+        & .search-input {
+            border-radius: 30px;
+            border: 1px solid var(--rs-white-05);
+
+        }
+    }
+}
+
+// header cart css 
+
+.rs_header {
+
+    &-cart,
+    &-fav,
+    &-bars {
+        position: relative;
+        width: 56px;
+        height: 56px;
+        text-align: center;
+        line-height: 56px;
+        background: var(--rs-white-01);
+        border: 1px solid var(--rs-white-05);
+        backdrop-filter: blur(7.5px);
+        border-radius: 50%;
+        margin-left: 30px;
+        cursor: pointer;
+
+        @media #{$xxxl, $xl, $lg} {
+            margin-left: 20px;
+        }
+
+        @media #{$xxl} {
+            margin-left: 10px;
+        }
+    }
+
+    button i {
+        color: var(--rs-theme-2);
+
+    }
+}
+
+.rs_badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: var(--rs-white);
+    line-height: 15px;
+    border-radius: 50%;
+    color: var(--rs-theme-1);
+    font-size: 10px;
+}
+
+
+
+.rs_header-btn {
+    margin-left: 30px;
+    display: inline-flex;
+
+    @media #{$xxl} {
+        margin-left: 10px;
+    }
+
+    @media #{$xl , $lg} {
+        margin-left: 20px;
+    }
+
+
+    .rs_btn-outline {
+        color: var(--rs-white);
+        border-color: var(--rs-white-05);
+
+        &:hover {
+            border-color: var(--rs-theme-1);
+
+        }
+    }
+}

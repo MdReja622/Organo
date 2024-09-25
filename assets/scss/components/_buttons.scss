@@ -1,0 +1,174 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  ALL Button CSS START
+/*----------------------------------------*/
+.rs_btn-group {
+    display: flex;
+    gap: 30px;
+}
+
+
+// outline btn
+.rs_btn-outline {
+    border-radius: 50px;
+    border: 1px solid var(--rs-theme-1);
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s all;
+    color: var(--rs-theme-1);
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--rs-ff-roboto);
+    padding: 14px 29px;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+
+
+    i {
+        margin-left: 5px;
+        font-size: 16px;
+    }
+
+
+    &:hover {
+        border: 1px solid var(--rs-theme-1);
+        color: var(--rs-white);
+    }
+
+
+}
+
+// yellow btn 
+.rs_btn-yellow {
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s all;
+    color: var(--rs-title-color);
+    font-size: 18px;
+    font-weight: 500;
+    background: var(--rs-theme-2);
+    font-family: var(--rs-ff-roboto);
+    padding: 14px 29px;
+    overflow: hidden;
+    position: relative;
+
+    i {
+        margin-left: 5px;
+        font-size: 16px;
+    }
+
+    &:hover {
+        color: var(--rs-white);
+    }
+}
+
+
+
+
+// yellow btn 
+.rs_btn-blue {
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s all;
+    color: var(--rs-white);
+    font-size: 18px;
+    font-weight: 500;
+    background: var(--rs-theme-1);
+    font-family: var(--rs-ff-roboto);
+    padding: 14px 29px;
+    overflow: hidden;
+    position: relative;
+
+    i {
+        margin-left: 5px;
+        font-size: 16px;
+    }
+
+    &:hover {
+        color: var(--rs-white);
+    }
+}
+
+
+
+
+
+// hover effect 
+.rs_btn-yellow::after,
+.rs_btn-outline::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: auto;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+    width: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    background: var(--rs-theme-1);
+    transition: width .5s cubic-bezier(.25, .8, .25, 1) 0.1s;
+    -moz-transition: width .5s cubic-bezier(.25, .8, .25, 1) 0.1s;
+    -webkit-transition: width .5s cubic-bezier(.25, .8, .25, 1) 0.1s;
+}
+
+.rs_btn-yellow:hover::after,
+.rs_btn-outline:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+
+
+// slider navigation 
+
+.rs_slider-nav {
+    button {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--rs-smoke-alpha);
+        color: var(--rs-theme-1);
+        transition: 0.3s;
+
+
+
+        &:not(:first-child) {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            background: var(--rs-theme-1);
+            color: var(--rs-white);
+
+
+        }
+    }
+
+}
+
+.rs_slider-nav-2 {
+    button {
+        color: var(--rs-white);
+
+        &:hover {
+            background: var(--rs-theme-2);
+            color: var(--rs-black);
+        }
+    }
+
+}

@@ -1,0 +1,143 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  30. hero CSS START
+/*----------------------------------------*/
+
+
+.rs_hero-height-bg {
+    min-height: 948px;
+    margin: 0 30px;
+    border-radius: 50px;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(111.75deg, rgba(1, 15, 28, 0.7) 0.65%, rgba(1, 12, 22, 0.6) 12.51%, rgba(0, 5, 9, 0.4) 50.35%, rgba(0, 0, 0, 0) 59%),
+            linear-gradient(90deg, #010F1C -6.42%, rgba(0, 0, 0, 0) 18.87%);
+        pointer-events: none;
+        border-radius: inherit;
+    }
+
+    &::after {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, #010F1C 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%);
+        pointer-events: none;
+    }
+}
+
+
+.rs_hero {
+    &-content {
+        position: relative;
+        z-index: 2;
+        margin-left: -85px;
+
+        @media #{$xxl, $xl, $lg, $md, $xs } {
+            margin-left: 0;
+            padding-left: 30px;
+        }
+
+        p {
+            padding-right: 185px;
+            margin-bottom: 30px;
+            color: var(--rs-body-color-2);
+        }
+    }
+
+    &-sub-title {
+        color: var(--rs-white);
+        background: var(--rs-white-01);
+    }
+
+    &-title {
+        color: var(--rs-white);
+        font-size: 84px;
+
+        @media #{$xxl , $xl} {
+            font-size: 80px;
+        }
+    }
+
+    &-offer {
+        &-badge {
+            position: relative;
+            margin-left: 50px;
+            width: 120px;
+            width: 120px;
+            height: 120px;
+            border: 1px solid var(--rs-white-05);
+            border-radius: 50%;
+
+            @media #{$lg} {
+                margin-left: auto;
+                margin-right: 150px;
+            }
+
+        }
+
+        &-img {
+
+            &-1,
+            &-2 {
+                position: absolute;
+                margin: auto;
+                inset: 0 0 0 0;
+            }
+        }
+    }
+
+}
+
+.rs_btn-group {
+    .rs_btn-outline {
+        color: var(--rs-white);
+        border-color: var(--rs-white-05);
+
+        &:hover {
+            border-color: var(--rs-theme-1);
+
+        }
+    }
+}
+
+
+
+
+
+// swiper bullet
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    top: 50%;
+    right: 60px;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.custom-bullet {
+    width: 5px;
+    height: 80px;
+    background-color: var(--rs-white);
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.custom-bullet-active {
+    background-color: var(--rs-theme-2);
+}
