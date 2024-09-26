@@ -243,8 +243,21 @@
 			bulletClass: 'custom-bullet',
 			bulletActiveClass: 'custom-bullet-active',
 		},
+		on: {
+			slideChange: function () {
+				const activeSlide = this.slides[this.activeIndex];
+				const wow = new WOW();
+				wow.init();
+			},
+		},
 
 	});
+
+
+
+	$('.rs_hero-height-bg').parallax({ imageSrc: 'assets/img/hero/hero-bg-1.jpg' });
+
+
 
 	// filter slides 
 	var swiper = new Swiper('.filter_slider', {
@@ -338,7 +351,9 @@
 
 
 
-
+	$('.jarallax').jarallax({
+		speed: 0.2,
+	});
 
 
 

@@ -4989,6 +4989,25 @@ input[type=color] {
   border-color: var(--rs-theme-1);
 }
 
+.parallax {
+  position: relative;
+  height: 100vh;
+  background: url("../../assets/img/hero/hero-bg-1.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.parallax {
+  background-image: url("your-background-image.jpg");
+  /* Replace with your image URL */
+  background: url("../../assets/img/hero/hero-bg-1.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .rs_footer-bg {
   border-radius: 50px 50px 0px 0px;
   background: var(--rs-title-color);
@@ -5016,7 +5035,7 @@ input[type=color] {
   margin: 0;
 }
 .rs_footer-service-info {
-  color: var(--rs-body-color);
+  color: var(--rs-body-color-2);
   font-family: Roboto;
   font-size: 12px;
   font-weight: 400;
