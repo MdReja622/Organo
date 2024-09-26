@@ -17,6 +17,7 @@
 
     &-title {
         color: var(--rs-white);
+        line-height: 1;
 
     }
 
@@ -98,4 +99,10 @@
 .rs_testimonial-img {
     position: relative;
     z-index: 2;
+    margin-left: 15px;
+
+}
+
+.rs_testimonial-wrapper {
+    padding-right: 80px;
 }
